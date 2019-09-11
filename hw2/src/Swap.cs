@@ -1,4 +1,5 @@
-﻿using System.Collections;
+//添加给编号为1~8的八个方块
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
