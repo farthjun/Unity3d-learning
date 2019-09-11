@@ -1,4 +1,5 @@
-﻿using System.Collections;
+//添加给画布Canvas
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
