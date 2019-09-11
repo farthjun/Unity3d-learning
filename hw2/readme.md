@@ -1,6 +1,6 @@
 Unity小游戏——数字华容道
 
-<img src="D:\学术大礼包\3D游戏编程\Unity3d-learning\hw2\img\reslut.png" alt="reslut" style="zoom:67%;" />
+<img src="https://github.com/farthjun/Unity3d-learning/blob/master/hw2/img/reslut.png?raw=true" alt="reslut" style="zoom:67%;" />
 
 数字华容道的玩法和拼图十分相似，要求玩家复原被打乱的数字。本次作业中，我使用Unity制作了一个简单的3*3的数字华容道小游戏。以下是制作过程。
 
@@ -14,11 +14,11 @@ Unity小游戏——数字华容道
 
 在Inspector处设置该Button的名称以及Transform，设置为50*50大小。注意此处的坐标是相对坐标，相对于它的父类Canvas（画布）的：
 
-![setButton](D:\学术大礼包\3D游戏编程\Unity3d-learning\hw2\img\setButton.png)
+![setButton](https://github.com/farthjun/Unity3d-learning/blob/master/hw2/img/setButton.png?raw=true)
 
 复制设置好的Button，一共产生九个Button，并修改每个Button的相对坐标和Text内容，形成九宫格。做完这些，还可以对Button的字体、透明度做一些美化，结果显示如下：
 
-![outlook](D:\学术大礼包\3D游戏编程\Unity3d-learning\hw2\img\outlook.png)
+![outlook](https://github.com/farthjun/Unity3d-learning/blob/master/hw2/img/outlook.png?raw=true)
 
 
 
@@ -205,13 +205,13 @@ GUI.Label(new Rect(50, 200, 50, 50), "Time: "+timeCount.ToString(), fontStyle2);
 
 由于是随机打乱九宫格，会有一种情况是无法拼回原样的：
 
-![nonSuccess](D:\学术大礼包\3D游戏编程\Unity3d-learning\hw2\img\nonSuccess.png)
+![nonSuccess](https://github.com/farthjun/Unity3d-learning/blob/master/hw2/img/nonSuccess.png?raw=true)
 
 但是我暂时还没有对打乱算法进行改进。如果您拼到这一步了，不用再继续啦，直接点击start进行下一局吧。
 
 关于游戏界面，我本想给每个按钮插入一张图片，做到类似下面这种效果：
 
-<img src="D:\学术大礼包\3D游戏编程\Unity3d-learning\hw2\img\example.jpg" alt="example" style="zoom:30%;" />
+<img src="https://github.com/farthjun/Unity3d-learning/blob/master/hw2/img/example.jpg?raw=true" style="zoom:30%;" />
 
 尝试了一些方法都没有成功，以后更深入地学习Unity，或许可以进行改进。
 
