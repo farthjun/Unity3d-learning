@@ -211,7 +211,7 @@ GUI.Label(new Rect(50, 200, 50, 50), "Time: "+timeCount.ToString(), fontStyle2);
 
 关于游戏界面，我本想给每个按钮插入一张图片，做到类似下面这种效果：
 
-<img src="https://github.com/farthjun/Unity3d-learning/blob/master/hw2/img/example.jpg?raw=true" style="zoom:20%;" width=400 />
+<img src="https://github.com/farthjun/Unity3d-learning/blob/master/hw2/img/example.jpg?raw=true" style="zoom:20%;" width=300 />
 
 尝试了一些方法都没有成功，以后更深入地学习Unity，或许可以进行改进。
 
