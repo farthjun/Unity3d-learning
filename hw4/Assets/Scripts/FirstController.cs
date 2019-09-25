@@ -9,6 +9,8 @@ public class FirstController : MonoBehaviour, ISceneController, UserAction
     public CoastController fromCoast;
     public CoastController toCoast;
     public BoatController boat;
+    //新增的裁判类
+    public Judge judge;
     private Character[] Character;
     private FirstSceneActionManager FSAmanager;
 
@@ -31,6 +33,7 @@ public class FirstController : MonoBehaviour, ISceneController, UserAction
         fromCoast = new CoastController("from");
         toCoast = new CoastController("to");
         boat = new BoatController();
+        judge = new Judge(fromCoast, toCoast, boat);
         GameObject river = Instantiate(Resources.Load("Prefabs/river", typeof(GameObject)), new Vector3(0, -7, 10), Quaternion.identity, null) as GameObject;
         river.name = "river";
         for (int i = 0; i < 3; i++)
@@ -91,54 +94,16 @@ public class FirstController : MonoBehaviour, ISceneController, UserAction
             Objects.getOnBoat(boat);
             boat.GetOnBoat(Objects);
         }
-        UserGUI.SetState = Check();
+        //通知controller游戏结束，显示win或lose
+        UserGUI.SetState = judge.Check();
     }
 
     public void MoveBoat()
     {
         if (FSAmanager.Complete == SSActionEventType.Started || boat.isEmpty()) return;
         FSAmanager.BoatMove(boat);
-        UserGUI.SetState = Check();
-    }
-
-    int Check()
-    {   // 0->not finish, 1->lose, 2->win
-        int from_priest = 0;
-        int from_devil = 0;
-        int to_priest = 0;
-        int to_devil = 0;
-
-        int[] fromCount = fromCoast.GetobjectsNumber();
-        from_priest += fromCount[0];
-        from_devil += fromCount[1];
-
-        int[] toCount = toCoast.GetobjectsNumber();
-        to_priest += toCount[0];
-        to_devil += toCount[1];
-
-        if (to_priest + to_devil == 6)      // win
-            return 2;
-
-        int[] boatCount = boat.GetobjectsNumber();
-        if (boat.get_State() == -1)
-        {   // boat at toCoast
-            to_priest += boatCount[0];
-            to_devil += boatCount[1];
-        }
-        else
-        {   // boat at fromCoast
-            from_priest += boatCount[0];
-            from_devil += boatCount[1];
-        }
-        if (from_priest < from_devil && from_priest > 0)
-        {       // lose
-            return 1;
-        }
-        if (to_priest < to_devil && to_priest > 0)
-        {
-            return 1;
-        }
-        return 0;           // not finish
+        //新增的裁判类
+        UserGUI.SetState = judge.Check();
     }
 
     public void Restart()
