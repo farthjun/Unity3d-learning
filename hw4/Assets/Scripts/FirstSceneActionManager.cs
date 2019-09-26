@@ -8,6 +8,7 @@ public class FirstSceneActionManager : SSActionManager, SSActionCallback
 {
     public SSActionEventType Complete = SSActionEventType.Completed;
 
+
     public void BoatMove(BoatController Boat)
     {
         Complete = SSActionEventType.Started;

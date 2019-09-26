@@ -90,7 +90,7 @@ public class Character
 
     public void reset()
     {
-        coastController = (SSDirector.getInstance().currentScenceController as FirstController).fromCoast;
+        coastController = (SSDirector.getInstance().currentScenceController as Main).fromCoast;
         getOnCoast(coastController);
         setPosition(coastController.getEmptyPosition());
         coastController.getOnCoast(this);
