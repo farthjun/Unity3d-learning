@@ -1,4 +1,3 @@
-unity3d小游戏——智能坦克。博客地址https://blog.csdn.net/Jundesky/article/details/103392424
 ## 坦克对战游戏 AI 设计
 从商店下载游戏：“Kawaii” Tank 或 其他坦克模型，构建 AI 对战坦克。具体要求
 
@@ -445,4 +444,4 @@ public class IUserGUI : MonoBehaviour {
     }
 }
 ```
-最后，放上GitHub[传送门](https://github.com/farthjun/Unity3d-learning/tree/master/hw10)。
+
